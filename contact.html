@@ -1,0 +1,717 @@
+<!--
+ * @author @hopsyder
+ * @organization Nexus Partners
+ * @description Page Contact - GAATH Benin
+ * @created 2026-02-28
+ * @updated 2026-02-28
+ * 🌐 ceo.nexuspartners.xyz
+ * 📧 daoudaabassichristian@gmail.com
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contactez-nous - GAATH Benin | Votre Partenaire Multiservices</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="contact gaath benin, agence cotonou, assistance voyage, immobilier benin, marketing digital"
+        name="keywords">
+    <meta
+        content="Une question ? Un projet ? Nos experts multiservices sont à votre écoute pour transformer vos besoins en résultats."
+        name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .questionnaire-container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .questionnaire-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(134, 184, 23, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse-bg 10s infinite alternate;
+        }
+
+        @keyframes pulse-bg {
+            from {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            to {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .step-form {
+            display: none;
+            animation: fadeInStep 0.5s ease forwards;
+        }
+
+        @keyframes fadeInStep {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-form.active {
+            display: block;
+        }
+
+        .option-card {
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-align: center;
+            background: white;
+            height: 100%;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(134, 184, 23, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .option-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .option-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            background-color: #f0f0f0;
+        }
+
+        .progress-bar {
+            background-image: linear-gradient(45deg, var(--primary), #a5d21a);
+        }
+
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            padding: 12px 35px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(134, 184, 23, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Chargement...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Avenue de l'Excellence,
+                        Cotonou, Bénin</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+229 00 00 00 00</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@gaath.com</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>GAATH BENIN</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-white"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Nos Pôles</a>
+                        <div class="dropdown-menu mega-menu border-0 shadow-lg">
+                            <!-- Voyage -->
+                            <a href="voyage.html" class="mega-menu-item">
+                                <div class="mega-menu-icon"><i class="fa fa-plane"></i></div>
+                                <div class="mega-menu-content">
+                                    <span class="mega-menu-title">Voyage & Études</span>
+                                </div>
+                            </a>
+                            <!-- Immobilier -->
+                            <a href="immobilier.html" class="mega-menu-item">
+                                <div class="mega-menu-icon"><i class="fa fa-building"></i></div>
+                                <div class="mega-menu-content">
+                                    <span class="mega-menu-title">Agence Immobilière</span>
+                                </div>
+                            </a>
+                            <!-- Événementiel -->
+                            <a href="evenementiel.html" class="mega-menu-item">
+                                <div class="mega-menu-icon"><i class="fa fa-mask"></i></div>
+                                <div class="mega-menu-content">
+                                    <span class="mega-menu-title">Événementiel</span>
+                                </div>
+                            </a>
+                            <!-- Marketing -->
+                            <a href="marketing.html" class="mega-menu-item">
+                                <div class="mega-menu-icon"><i class="fa fa-bullhorn"></i></div>
+                                <div class="mega-menu-content">
+                                    <span class="mega-menu-title">Formation & Marketing</span>
+                                </div>
+                            </a>
+                            <!-- BTP -->
+                            <a href="btp.html" class="mega-menu-item">
+                                <div class="mega-menu-icon"><i class="fa fa-hard-hat"></i></div>
+                                <div class="mega-menu-content">
+                                    <span class="mega-menu-title">BTP & Nettoyage</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Contactez-nous</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Contact form -->
+    <div class="container">
+        <div class="questionnaire-container wow fadeInUp" data-wow-delay="0.1s">
+
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Parlons de vos projets</h6>
+                <h1 class="mb-5">Une question ? Un projet ?</h1>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    style="width: 20%" id="progressBar"></div>
+            </div>
+
+            <form id="gaathQuestionnaire">
+                <!-- STEP 1: Pôle Selection -->
+                <div class="step-form active" id="step1">
+                    <h3 class="mb-4 text-center">Quel pôle d'expertise vous intéresse ?</h3>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('voyage')">
+                                <i class="fa fa-plane"></i>
+                                <h5>Voyage & Études</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('immobilier')">
+                                <i class="fa fa-building"></i>
+                                <h5>Immobilier</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('evenementiel')">
+                                <i class="fa fa-mask"></i>
+                                <h5>Événementiel</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('marketing')">
+                                <i class="fa fa-bullhorn"></i>
+                                <h5>Marketing</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('btp')">
+                                <i class="fa fa-hard-hat"></i>
+                                <h5>BTP & Nettoyage</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-card" onclick="selectPole('contact')">
+                                <i class="fa fa-question-circle"></i>
+                                <h5>Autre Besoin</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Specific Questions (Dynamic) -->
+                <div class="step-form" id="step2">
+                    <div id="dynamicQuestions">
+                        <!-- Content injected by JS -->
+                    </div>
+                    <div class="mt-4 d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-primary rounded-pill px-4"
+                            onclick="prevStep()">Retour</button>
+                        <button type="button" class="btn btn-primary rounded-pill px-4"
+                            onclick="nextStep()">Continuer</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Contact Info -->
+                <div class="step-form" id="step3">
+                    <h3 class="mb-4 text-center">Vos Coordonnées</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="custName" placeholder="Nom Complet"
+                                    required>
+                                <label>Nom Complet</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="custEmail" placeholder="Email" required>
+                                <label>Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="custTel" placeholder="Téléphone">
+                                <label>Téléphone (WhatsApp)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-primary rounded-pill px-4"
+                            onclick="prevStep()">Retour</button>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4">Envoyer ma demande</button>
+                    </div>
+                </div>
+
+                <!-- SUCCESS STEP -->
+                <div class="step-form" id="stepSuccess">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <i class="fa fa-check-circle text-success" style="font-size: 5rem;"></i>
+                        </div>
+                        <h3>Merci pour votre confiance !</h3>
+                        <p class="fs-5">Votre demande a été transmise à nos experts. Un consultant GAATH vous contactera
+                            sous 24h.</p>
+                        <a href="index.html" class="btn btn-primary rounded-pill px-5 mt-3">Retour à l'accueil</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5>Coordonnées</h5>
+                    <p class="mb-4">Nos experts sont à votre écoute pour transformer vos besoins en résultats concrets.
+                        N'hésitez pas à nous contacter.</p>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Siège Social</h5>
+                            <p class="mb-0">Avenue de l'Excellence, Cotonou, Bénin</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Téléphone</h5>
+                            <p class="mb-0">+229 00 00 00 00</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-envelope-open text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Email Pro</h5>
+                            <p class="mb-0">contact@gaath.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126880.82662057398!2d2.3484218765434524!3d6.383141158586326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023559f237f3743%3A0xea8397a8e789ec3e!2sCotonou%2C%20B%C3%A9nin!5e0!3m2!1sfr!2sbj!4v1709100000000!5m2!1sfr!2sbj"
+                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form id="standardContactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="form-name" placeholder="Votre Nom"
+                                        required>
+                                    <label for="form-name">Votre Nom</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="form-email" placeholder="Votre Email"
+                                        required>
+                                    <label for="form-email">Votre Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="form-subject" placeholder="Sujet"
+                                        required>
+                                    <label for="form-subject">Sujet</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Votre message" id="form-message"
+                                        style="height: 100px" required></textarea>
+                                    <label for="form-message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Envoyer le Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">GAATH BENIN</h4>
+                    <p class="mb-4">Votre partenaire multiservices d'excellence au Bénin. Nous transformons vos
+                        ambitions en réalités concrètes avec rigueur et innovation.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-white mb-4">L'Agence</h4>
+                    <a class="btn btn-link" href="about.html">À Propos</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
+                    <a class="btn btn-link" href="">Confidentialité</a>
+                    <a class="btn btn-link" href="">FAQ</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-white mb-4">Nos Pôles</h4>
+                    <a class="btn btn-link" href="voyage.html">Voyage & Études</a>
+                    <a class="btn btn-link" href="immobilier.html">Immobilier</a>
+                    <a class="btn btn-link" href="evenementiel.html">Événementiel</a>
+                    <a class="btn btn-link" href="btp.html">BTP & Nettoyage</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Restez informé de nos opportunités et services d'excellence.</p>
+                    <div class="position-relative w-100 mt-3">
+                        <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Votre email">
+                        <button type="button"
+                            class="btn btn-primary rounded-pill position-absolute top-0 end-0 mt-1 me-1 py-2 px-4">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright text-center py-4">
+                <p class="mb-0">&copy; <a class="border-bottom" href="#">GAATH BENIN</a>, Tous droits réservés. <br>
+                    Développé avec <i class="fa fa-heart text-primary"></i> par <a class="border-bottom"
+                        href="https://nexuspartners.xyz">Nexus Partners</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="https://wa.me/22900000000" class="btn btn-lg btn-whatsapp-fixed btn-lg-square" target="_blank"><i
+            class="fab fa-whatsapp"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        let currentStep = 1;
+        let selectedPole = '';
+
+        function selectPole(pole) {
+            selectedPole = pole;
+            renderDynamicQuestions(pole);
+            goToStep(2);
+        }
+
+        function renderDynamicQuestions(pole) {
+            const container = document.getElementById('dynamicQuestions');
+            let html = '';
+
+            switch (pole) {
+                case 'voyage':
+                    html = `
+                        <h3 class="mb-4">Détails de votre voyage</h3>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Destination souhaitée</label>
+                                <select class="form-select py-3" id="q_destination"><option>France / Belgique</option><option>USA / Canada</option><option>Asie (Chine/Japon)</option><option>Afrique (Maroc/Sénégal)</option></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Niveau d'études</label>
+                                <input type="text" class="form-control py-3" id="q_level" placeholder="Ex: Licence, Master...">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Budget estimatif ($)</label>
+                                <input type="number" class="form-control py-3" id="q_budget" placeholder="Ex: 5000">
+                            </div>
+                        </div>`;
+                    break;
+                case 'immobilier':
+                    html = `
+                        <h3 class="mb-4">Votre projet immobilier</h3>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Type d'opération</label>
+                                <select class="form-select py-3" id="q_op_type"><option>Achat de terrain/maison</option><option>Location (Habitation/Pro)</option><option>Gestion de mes biens</option><option>Vendre un bien</option></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Type de bien</label>
+                                <select class="form-select py-3" id="q_property_type"><option>Villa</option><option>Appartement</option><option>Terrain titré</option><option>Bureaux</option></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Budget flexible</label>
+                                <input type="text" class="form-control py-3" id="q_budget_imm" placeholder="Ex: 200.000 FCFA / mois">
+                            </div>
+                        </div>`;
+                    break;
+                case 'evenementiel':
+                    html = `
+                        <h3 class="mb-4">Organisation d'événement</h3>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Quel type d'événement ?</label>
+                                <select class="form-select py-3" id="q_event_type"><option>Mariage / Célébration privée</option><option>Séminaire / Corporate</option><div class="option">Studio Audiovisuel (Clip/Pub)</div></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre d'invités</label>
+                                <input type="number" class="form-control py-3" id="q_guests" placeholder="Ex: 200">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date prévue</label>
+                                <input type="date" class="form-control py-3" id="q_event_date">
+                            </div>
+                        </div>`;
+                    break;
+                case 'marketing':
+                    html = `
+                        <h3 class="mb-4">Formation & Marketing</h3>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Domaine d'intérêt</label>
+                                <select class="form-select py-3" id="q_marketing_interest"><option>Formation (IA, Design, Leadership)</option><option>Stratégie Marketing / SEO</option><option>Assistance BPO / Administrative</option></select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="4" id="q_description" placeholder="Décrivez votre objectif principal..."></textarea>
+                            </div>
+                        </div>`;
+                    break;
+                case 'btp':
+                    html = `
+                        <h3 class="mb-4">BTP & Nettoyage</h3>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Type de besoin</label>
+                                <select class="form-select py-3" id="q_btp_type"><option>Construction / Génie Civil</option><option>Rénovation complète</option><option>Nettoyage Industriel / Fin chantier</option></select>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control py-3" id="q_location" placeholder="Localisation du chantier (Ville/Quartier)">
+                            </div>
+                        </div>`;
+                    break;
+                default:
+                    html = `<h3 class="mb-4 text-center">Dites-nous en plus sur votre besoin</h3><textarea class="form-control" rows="5" id="q_other_msg" placeholder="Votre message..."></textarea>`;
+            }
+            container.innerHTML = html;
+        }
+
+        function goToStep(step) {
+            $('.step-form').removeClass('active');
+            $(`#step${step}`).addClass('active');
+            currentStep = step;
+            updateProgress();
+        }
+
+        function nextStep() {
+            if (currentStep < 3) goToStep(currentStep + 1);
+        }
+
+        function prevStep() {
+            if (currentStep > 1) goToStep(currentStep - 1);
+        }
+
+        function updateProgress() {
+            let width = (currentStep / 3) * 100;
+            if (currentStep === 4) width = 100; // Success
+            $('#progressBar').css('width', width + '%');
+        }
+
+        $('#gaathQuestionnaire').on('submit', function (e) {
+            e.preventDefault();
+
+            // Collect Data
+            const name = $('#custName').val();
+            const email = $('#custEmail').val();
+            const tel = $('#custTel').val();
+
+            let details = `*Pôle:* ${selectedPole}\n`;
+
+            if (selectedPole === 'voyage') {
+                details += `*Destination:* ${$('#q_destination').val()}\n*Niveau:* ${$('#q_level').val()}\n*Budget:* ${$('#q_budget').val()}$\n`;
+            } else if (selectedPole === 'immobilier') {
+                details += `*Opération:* ${$('#q_op_type').val()}\n*Bien:* ${$('#q_property_type').val()}\n*Budget:* ${$('#q_budget_imm').val()}\n`;
+            } else if (selectedPole === 'evenementiel') {
+                details += `*Événement:* ${$('#q_event_type').val()}\n*Invités:* ${$('#q_guests').val()}\n*Date:* ${$('#q_event_date').val()}\n`;
+            } else if (selectedPole === 'marketing') {
+                details += `*Intérêt:* ${$('#q_marketing_interest').val()}\n*Description:* ${$('#q_description').val()}\n`;
+            } else if (selectedPole === 'btp') {
+                details += `*Besoins:* ${$('#q_btp_type').val()}\n*Lieu:* ${$('#q_location').val()}\n`;
+            } else {
+                details += `*Message:* ${$('#q_other_msg').val()}\n`;
+            }
+
+            const message = `*Nouvelle Demande GAATH BENIN*\n\n*Client:* ${name}\n*Email:* ${email}\n*Tél:* ${tel}\n\n${details}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/22900000000?text=${encodedMessage}`; // Remplacer par le vrai numéro
+
+            window.open(whatsappUrl, '_blank');
+            goToStep('Success');
+        });
+
+        // Initialize from URL param
+        const urlParams = new URLSearchParams(window.location.search);
+        const poleParam = urlParams.get('pole');
+        if (poleParam) {
+            selectPole(poleParam);
+        }
+        $('#standardContactForm').on('submit', function (e) {
+            e.preventDefault();
+            const name = $('#form-name').val();
+            const email = $('#form-email').val();
+            const subject = $('#form-subject').val();
+            const msg = $('#form-message').val();
+
+            const message = `*Nouveau Message (Contact)*\n\n*Nom:* ${name}\n*Email:* ${email}\n*Sujet:* ${subject}\n*Message:* ${msg}`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/22900000000?text=${encodedMessage}`, '_blank');
+            alert('Votre message a été préparé pour envoi via WhatsApp.');
+        });
+    </script>
+</body>
+
+</html>
