@@ -1,14 +1,68 @@
-/********** Template CSS **********/
+/**
+ * @author @hopsyder
+ * @organization Nexus Partners
+ * @description Styles globaux GAATH Benin - Charte Graphique Corporate Blue
+ * @created 2026-02-28
+ * @updated 2026-03-06
+ * 🌐 ceo.nexuspartners.xyz
+ * 📧 daoudaabassichristian@gmail.com
+*/
 :root {
-    --primary: #031f9b;
-    /* Gardé pour cohérence, mais utilisé avec finesse */
-    --secondary: #FE8800;
-    --light: #F5F5F5;
-    --dark: #0F172A;
-    /* Bleu nuit plus profond */
-    --glass-bg: rgba(255, 255, 255, 0.1);
+    --primary: #0B3B82;
+    /* Bleu Corporate GAATH */
+    --secondary: #ffffff;
+    --light: #FFFFFF;
+    --dark: #001A41;
+    /* Bleu nuit encore plus profond pour le contraste */
+    --glass-bg: rgba(11, 59, 130, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
-    --accent: #E2E8F0;
+    --accent: #F8FAFC;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Surcharges Bootstrap pour la cohérence de la marque */
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #00265a;
+    /* Plus sombre pour le hover */
+    border-color: #00265a;
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
 }
 
 .fw-medium {
@@ -62,8 +116,8 @@
 
 /*** Button ***/
 .btn {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     transition: .5s;
 }
 
@@ -101,12 +155,12 @@
 
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     margin-right: 25px;
     padding: 35px 0;
     color: #FFFFFF !important;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     outline: none;
     transition: .5s;
@@ -114,12 +168,16 @@
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark) !important;
+    color: #FFFFFF !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary) !important;
+    color: var(--secondary) !important;
+}
+
+.navbar-light .navbar-brand h1 {
+    color: #FFFFFF !important;
 }
 
 .navbar-light .navbar-brand img {
@@ -133,10 +191,9 @@
 
 .navbar-toggler {
     border: none;
-    background: var(--primary) !important;
+    background: transparent !important;
     padding: 10px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(134, 184, 23, 0.3);
 }
 
 .navbar-toggler:focus {
@@ -150,10 +207,10 @@
         top: 15px;
         left: 15px;
         right: 15px;
-        background: rgba(255, 255, 255, 0.9) !important;
+        background: var(--primary) !important;
         backdrop-filter: blur(15px);
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         z-index: 1050;
         transition: all 0.3s ease;
         padding: 10px 20px !important;
@@ -176,7 +233,7 @@
     .sticky-top.navbar-light .navbar-nav .nav-link {
         padding: 12px 15px;
         margin-left: 0;
-        color: var(--dark) !important;
+        color: #FFFFFF !important;
         border-radius: 10px;
     }
 
@@ -222,7 +279,7 @@
     .mega-menu-title {
         font-size: 14px;
         font-weight: 700;
-        color: var(--dark);
+        color: #FFFFFF;
     }
 }
 
@@ -235,7 +292,7 @@
         border-bottom: 1px solid var(--glass-border);
         z-index: 999;
         backdrop-filter: blur(10px);
-        background: rgba(15, 23, 42, 0.1);
+        background: var(--primary);
     }
 
     .nav-item.dropdown {
@@ -244,9 +301,8 @@
 
     .sticky-top.navbar-light {
         position: fixed;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(15px);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        background: var(--primary);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-light .navbar-nav .nav-link {
@@ -322,7 +378,7 @@
 
     .mega-menu-title {
         font-weight: 700;
-        color: var(--dark);
+        color: var(--primary);
         font-size: 16px;
         margin-bottom: 2px;
     }
@@ -340,7 +396,7 @@
         height: 2px;
         bottom: -1px;
         left: 50%;
-        background: var(--primary);
+        background: #FFFFFF;
         transition: .5s;
     }
 
